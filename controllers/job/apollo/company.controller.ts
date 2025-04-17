@@ -12,7 +12,7 @@ export const searchApolloOrganizations = async (req: Request, res: Response) => 
 
         // Extract request parameters
         const {
-            organization_name,
+            organization_name,  
             page = "1",
             organization_num_employees_ranges,
             organization_locations,
@@ -24,10 +24,6 @@ export const searchApolloOrganizations = async (req: Request, res: Response) => 
         } = req.body;
 
         // Validate required fields
-        if (!organization_name) {
-            res.status(400).json({ error: "Missing required field: organization_name" });
-            return
-        }
 
         // Build API request parameters dynamically
         const params: Record<string, any> = { q_organization_name: organization_name, page };
@@ -123,3 +119,4 @@ export const getOrganizationDetails = async (req: Request, res: Response) => {
         res.status(error.response?.status || 500).json({ error: error.message });
     }
 };
+

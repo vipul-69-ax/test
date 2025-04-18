@@ -34,7 +34,7 @@ try{
         method: "GET",
         url: "https://apollo-io-no-cookies-required.p.rapidapi.com/search_organization",
         headers: {
-            "x-rapidapi-key": API_KEYS.APPOLLO_API_KEY as string,
+            "x-rapidapi-key": "82c226baedmshc18a75705610913p14b784jsn100ef5455726",
             "x-rapidapi-host": "apollo-io-no-cookies-required.p.rapidapi.com",
             "Content-Type": "application/json"
         },
@@ -113,4 +113,5 @@ export const getOrganizationDetails = async (req: Request, res: Response) => {
         res.status(error.response?.status || 500).json({ error: error.message });
     }
 };
+
 
